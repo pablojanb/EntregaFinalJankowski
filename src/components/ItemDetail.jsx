@@ -1,4 +1,13 @@
-export const ItemDetail = ({item}) => {
+export const ItemDetail = ({item, loading}) => {
+
+    if (loading) {
+        return (
+            <div className="cargando">
+                <h1>Cargando</h1>
+            </div>
+        )
+    }
+    
     return (
         item &&
         <div className="itemDetail">
