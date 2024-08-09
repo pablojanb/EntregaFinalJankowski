@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cargando {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.description {
+    display: flex;
+    gap: 20px;
+}

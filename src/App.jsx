@@ -1,4 +1,5 @@
 import { ItemListContainer } from "./components/ItemListContainer";
+import { ItemListDetail } from "./components/ItemListDetail";
 import { NavBar } from "./components/NavBar";
 
 
@@ -10,6 +11,7 @@ function App() {
     <>
       <NavBar />
       <ItemListContainer />
+      <ItemListDetail />
     </>
   )
 }

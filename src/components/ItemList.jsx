@@ -1,11 +1,25 @@
 import { Item } from "./Item"
 
-export const ItemList = ({productos})=> {
+export const ItemList = ({productos, loading})=> {
+
+    if (loading) {
+        return (
+            <div className="cargando">
+                <h1>Cargando</h1>
+            </div>
+        )
+    }
+
     return (
-        productos.map((elem)=>{
+        <>
+        <h1>Productos</h1>
+        <div className="productos">
+            {productos.map((elem)=>{
             return (
                 <Item key={elem.id} item={elem}/>
                     )
-        })
+        })}
+        </div>
+        </>
             )
 }
