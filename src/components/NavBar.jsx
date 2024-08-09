@@ -14,9 +14,9 @@ export const NavBar = ()=> {
                     <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link as={NavLink} to="/productos">Productos</Nav.Link>
-                        <Nav.Link as={NavLink} to="/productos/buzos">Buzos</Nav.Link>
-                        <Nav.Link as={NavLink} to="/productos/pantalones">Pantalones</Nav.Link>
-                        <Nav.Link as={NavLink} to="/productos/remeras">Remeras</Nav.Link>                    </Nav>
+                        <Nav.Link as={NavLink} to="/category/buzos">Buzos</Nav.Link>
+                        <Nav.Link as={NavLink} to="/category/pantalones">Pantalones</Nav.Link>
+                        <Nav.Link as={NavLink} to="/category/remeras">Remeras</Nav.Link>                    </Nav>
                     <CartWidget />
                     </Navbar.Collapse>
                 </Container>

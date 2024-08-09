@@ -1,9 +1,13 @@
 import data from "../data/data.json"
 
-export const traerDatos = ()=>{
+export const traerDatos = (category)=>{
     return new Promise ((res)=>{
         setTimeout(()=>{
-            res(data)
+                if (category) {
+                    res(data.filter((elem)=>elem.category===category))
+                } else {
+                    res(data)
+                }
         },1000)
     })
 }
