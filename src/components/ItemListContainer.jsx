@@ -1,9 +1,18 @@
 import { Container } from "react-bootstrap"
+import { traerDatos } from "../helpers/traerDatos"
+import { useState } from "react"
+import { ItemList } from "./ItemList"
 
-export const ItemListContainer = ({greeting}) => {
+export const ItemListContainer = () => {
+
+    const [productos, setProductos] = useState([])
+
+    traerDatos()
+        .then(res=>setProductos(res))
+
     return (
         <Container>
-            <h1>{greeting}</h1>
+            <ItemList productos={productos}/>
         </Container>
     )
 }
