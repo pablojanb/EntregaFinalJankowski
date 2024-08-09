@@ -16,7 +16,7 @@ export const ItemDetailContainer = ()=> {
                 setItem(res)
                 setLoading(false)
             })
-    }, [])
+    }, [itemId])
 
     return (
         <Container>

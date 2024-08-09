@@ -8,6 +8,7 @@ export const ItemListContainer = () => {
 
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
+    const [titulo, setTitulo] = useState("Productos")
 
     const category = useParams().id
 
@@ -16,12 +17,17 @@ export const ItemListContainer = () => {
         .then(res=>{
             setProductos(res)
             setLoading(false)
+            if (category) {
+                setTitulo(category)
+            } else {
+                setTitulo("Productos")
+            }
         })
     }, [category])
 
     return (
         <Container>
-            <ItemList productos={productos} loading={loading}/>
+            <ItemList productos={productos} loading={loading} titulo={titulo}/>
         </Container>
     )
 }

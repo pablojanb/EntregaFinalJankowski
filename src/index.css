@@ -14,9 +14,19 @@
 .productos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
 .description {
     display: flex;
     gap: 20px;
+}
+
+.ver-mas {
+    font-weight: bold;
+    background-color: rgb(211, 211, 211);
+    padding: 5px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border-radius: 20%;
 }

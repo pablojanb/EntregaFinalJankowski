@@ -7,7 +7,7 @@ export const Item = ({item})=> {
             <img src={item.img} alt={item.title} />
             <p><strong>{item.price}</strong></p>
             <p><strong>{item.category}</strong></p>
-            <Link to={`/item/${item.id}`}>Ver más</Link>
+            <Link to={`/item/${item.id}`} className="ver-mas">Ver más</Link>
         </div>
             )
 }

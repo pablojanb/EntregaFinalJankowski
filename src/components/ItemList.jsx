@@ -1,6 +1,7 @@
 import { Item } from "./Item"
 
-export const ItemList = ({productos, loading})=> {
+export const ItemList = ({productos, loading, titulo})=> {
+
 
     if (loading) {
         return (
@@ -12,7 +13,7 @@ export const ItemList = ({productos, loading})=> {
 
     return (
         <>
-        <h1>Productos</h1>
+        <h1>{titulo}</h1>
         <div className="productos">
             {productos.map((elem)=>{
             return (
