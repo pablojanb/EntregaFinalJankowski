@@ -1,4 +1,15 @@
+import { Counter } from "./Counter"
+import { useState } from "react"
+
 export const ItemDetail = ({item, loading}) => {
+
+    const [cantidad, setCantidad] = useState(1)
+    const handleRestar = ()=>{
+        cantidad > 1 && setCantidad((prev)=>prev - 1)
+    }
+    const handleSumar = ()=>{
+        cantidad < item.stock && setCantidad((prev)=>prev + 1)
+    }
 
     if (loading) {
         return (
@@ -14,7 +25,10 @@ export const ItemDetail = ({item, loading}) => {
             <h1>{item.title}</h1>
             <div className="description">
                 <img className="img-item-detail" src={item.img} alt={item.title} />
-                <p>{item.description}</p>
+                <div className="counter">
+                    <p>{item.description}</p>
+                    <Counter cantidad={cantidad} handleRestar={handleRestar} handleSumar={handleSumar} />
+                </div>
             </div>
             <p><strong>${item.price}</strong></p>
         </div>

@@ -43,6 +43,41 @@
     font-size: 20px;
 }
 
+.counter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cantidad {
+    display: flex;
+    align-items: center;
+}
+
+.numCantidad {
+    font-size: 25px;
+}
+
+.btn-cantidad {
+    padding: 5px;
+    margin: 10px;
+}
+
+.btn-agregar {
+    width: 200px;
+}
+
+.btn-cantidad, .btn-agregar {
+    border: none;
+    border-radius: 15%;
+}
+
+.btn-cantidad:hover, .btn-agregar:hover {
+    background-color: black;
+    color: white;
+    transform: scale(1.1);
+}
+
 .footer {
     display: flex;
     justify-content: center;
