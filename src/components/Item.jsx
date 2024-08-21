@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 
 export const Item = ({item})=> {
-    console.log(item.img)
     return (
         <div className="item">
             <h1>{item.title}</h1>

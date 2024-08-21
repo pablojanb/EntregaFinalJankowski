@@ -1,6 +1,6 @@
 
-export const Counter = ({cantidad, handleRestar, handleSumar})=> {
-    
+export const Counter = ({cantidad, handleRestar, handleSumar, agregarAlCarrito})=> {
+
     return (
         <div className="counter">
             <div className="cantidad">
@@ -8,7 +8,7 @@ export const Counter = ({cantidad, handleRestar, handleSumar})=> {
                 <p className="numCantidad">{cantidad}</p>
                 <button onClick={handleSumar} className="btn-cantidad">+</button>
             </div>
-            <button className="btn-agregar">Agregar al carrito</button>
+            <button onClick={agregarAlCarrito} className="btn-agregar">Agregar al carrito</button>
         </div>
             )
 }

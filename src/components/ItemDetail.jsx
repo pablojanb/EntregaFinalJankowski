@@ -1,7 +1,10 @@
+import { CarritoContext } from "../contexts/CarritoContext"
 import { Counter } from "./Counter"
-import { useState } from "react"
+import { useContext, useState } from "react"
 
 export const ItemDetail = ({item, loading}) => {
+
+    const {agregarAlCarrito} = useContext(CarritoContext)
 
     const [cantidad, setCantidad] = useState(1)
     const handleRestar = ()=>{
@@ -27,7 +30,7 @@ export const ItemDetail = ({item, loading}) => {
                 <img className="img-item-detail" src={item.img} alt={item.title} />
                 <div className="counter">
                     <p>{item.description}</p>
-                    <Counter cantidad={cantidad} handleRestar={handleRestar} handleSumar={handleSumar} />
+                    <Counter cantidad={cantidad} handleRestar={handleRestar} handleSumar={handleSumar} agregarAlCarrito={()=>agregarAlCarrito(item, cantidad)}/>
                 </div>
             </div>
             <p><strong>${item.price}</strong></p>
