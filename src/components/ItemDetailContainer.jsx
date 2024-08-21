@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
-import { traerItemPorId } from "../helpers/traerDatos"
 import { ItemDetail } from "./ItemDetail"
 import { Container } from "react-bootstrap"
 import { useParams } from "react-router-dom"
+import { doc, getDoc } from "firebase/firestore"
+import { db } from "../main"
 
 export const ItemDetailContainer = ()=> {
     const [item, setItem] = useState(null)
@@ -10,10 +11,12 @@ export const ItemDetailContainer = ()=> {
     
     const itemId = useParams().id
 
+
     useEffect(()=>{
-        traerItemPorId(Number(itemId))
-            .then(res=>{
-                setItem(res)
+        const itemRef = doc(db, "productos", itemId)
+        getDoc(itemRef)
+            .then((resp)=>{
+                setItem({id: resp.id, ...resp.data()})
                 setLoading(false)
             })
     }, [itemId])

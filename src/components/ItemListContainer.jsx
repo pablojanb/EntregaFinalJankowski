@@ -1,8 +1,9 @@
 import { Container } from "react-bootstrap"
-import { traerDatos } from "../helpers/traerDatos"
 import { useEffect, useState } from "react"
 import { ItemList } from "./ItemList"
 import { useParams } from "react-router-dom"
+import { getFirestore, collection, getDocs, query, where } from "firebase/firestore"
+import { db } from "../main"
 
 export const ItemListContainer = () => {
 
@@ -13,16 +14,20 @@ export const ItemListContainer = () => {
     const category = useParams().id
 
     useEffect(()=>{
-        traerDatos(category)
-        .then(res=>{
-            setProductos(res)
-            setLoading(false)
-            if (category) {
-                setTitulo(category)
-            } else {
-                setTitulo("Productos")
-            }
-        })
+        const productosRef = collection(db, "productos")
+        const traerCategory = category ? query(productosRef, where("category", "==", category)) : productosRef
+        getDocs(traerCategory)
+            .then((resp)=> {
+                setProductos(resp.docs.map((prod)=>{
+                    return {id: prod.id, ...prod.data()}
+                }))
+                setLoading(false)
+                if (category) {
+                    setTitulo(category)
+                } else {
+                    setTitulo("Productos")
+                }
+            })
     }, [category])
 
     return (

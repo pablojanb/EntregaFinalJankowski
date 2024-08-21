@@ -16,7 +16,7 @@ export const CarritoProvider = ({children})=>{
             setCarrito([...carrito, {...item, cantidad}])
         }
     }
-    
+
     const cantidadEnCarrito = ()=>{
         return carrito.reduce((acc,carrito)=>acc + carrito.cantidad,0)
     }

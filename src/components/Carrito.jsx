@@ -1,3 +1,4 @@
+import { Container } from "react-bootstrap"
 import { useContext } from "react"
 import { CarritoContext } from "../contexts/CarritoContext"
 
@@ -8,12 +9,14 @@ export const Carrito = ()=> {
 
     if (carrito.length < 1) {
         return (
-            <h1>El carrito esta vacio</h1>
+            <Container>
+                <h1>El carrito esta vacio</h1>
+            </Container>
                 )
     }
 
     return (
-            <>
+            <Container>
             <div className="carrito">
                 {
                     carrito.map((el)=>{
@@ -34,6 +37,6 @@ export const Carrito = ()=> {
                 <button onClick={vaciarCarrito}>Vaciar carrito</button>
                 <button>Comprar carrito</button>
             </div>
-            </>
+            </Container>
             )
 }
