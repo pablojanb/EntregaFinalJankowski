@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 import { ItemList } from "./ItemList"
 import { useParams } from "react-router-dom"
 import { getFirestore, collection, getDocs, query, where } from "firebase/firestore"
-import { db } from "../main"
 
 export const ItemListContainer = () => {
 
@@ -14,6 +13,7 @@ export const ItemListContainer = () => {
     const category = useParams().id
 
     useEffect(()=>{
+        const db = getFirestore();
         const productosRef = collection(db, "productos")
         const traerCategory = category ? query(productosRef, where("category", "==", category)) : productosRef
         getDocs(traerCategory)

@@ -30,7 +30,7 @@ export const ItemDetail = ({item, loading}) => {
                 <img className="img-item-detail" src={item.img} alt={item.title} />
                 <div className="counter">
                     <p>{item.description}</p>
-                    <Counter cantidad={cantidad} handleRestar={handleRestar} handleSumar={handleSumar} agregarAlCarrito={()=>agregarAlCarrito(item, cantidad)}/>
+                    <Counter cantidad={cantidad} handleRestar={handleRestar} handleSumar={handleSumar} agregarAlCarrito={()=>agregarAlCarrito(item, cantidad)} stock={item.stock}/>
                 </div>
             </div>
             <p><strong>${item.price}</strong></p>

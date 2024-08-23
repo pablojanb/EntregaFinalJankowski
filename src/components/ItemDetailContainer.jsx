@@ -2,8 +2,7 @@ import { useEffect, useState } from "react"
 import { ItemDetail } from "./ItemDetail"
 import { Container } from "react-bootstrap"
 import { useParams } from "react-router-dom"
-import { doc, getDoc } from "firebase/firestore"
-import { db } from "../main"
+import { getFirestore, doc, getDoc } from "firebase/firestore"
 
 export const ItemDetailContainer = ()=> {
     const [item, setItem] = useState(null)
@@ -13,6 +12,7 @@ export const ItemDetailContainer = ()=> {
 
 
     useEffect(()=>{
+        const db = getFirestore();
         const itemRef = doc(db, "productos", itemId)
         getDoc(itemRef)
             .then((resp)=>{

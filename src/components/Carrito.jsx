@@ -1,6 +1,7 @@
 import { Container } from "react-bootstrap"
 import { useContext } from "react"
 import { CarritoContext } from "../contexts/CarritoContext"
+import { Link } from "react-router-dom"
 
 export const Carrito = ()=> {
 
@@ -9,9 +10,10 @@ export const Carrito = ()=> {
 
     if (carrito.length < 1) {
         return (
-            <Container>
-                <h1>El carrito esta vacio</h1>
-            </Container>
+                <div className="mensaje-carrito-vacio">
+                    <h1>Todavia no tenés productos en tu carrito</h1>
+                    <Link className="btn-carrito" to="/productos" >Ir a productos</Link>
+                </div>
                 )
     }
 
@@ -22,20 +24,25 @@ export const Carrito = ()=> {
                     carrito.map((el)=>{
                         return (
                             <div key={el.id} className="producto-carrito">
-                                <h2>{el.title}</h2>
-                                <img src={el.img} alt={el.title} />
-                                <p><strong>${el.price}</strong></p>
-                                <p>Cantidad: {el.cantidad}</p>
-                                <p><strong>Subtotal: ${el.cantidad * el.price}</strong></p>
+                                <div>
+                                    <h2>{el.title}</h2>
+                                    <img src={el.img} alt={el.title} />
+                                    <p>Precio unitario: ${el.price}</p>
+                                </div>
+                                <div>
+                                    <p>Cantidad: {el.cantidad}</p>
+                                    <p><strong>Subtotal: ${el.cantidad * el.price}</strong></p>
+                                </div>
                             </div>
                                 )
                     })
                 }
             </div>
+            <h1>Finalizar compra</h1>
             <div className="menu-carrito">
-                <p>Total: {carrito.reduce((acc,prod)=>acc+prod.price*prod.cantidad,0)}</p>
-                <button onClick={vaciarCarrito}>Vaciar carrito</button>
-                <button>Comprar carrito</button>
+                <h3><strong>Precio total: ${carrito.reduce((acc,prod)=>acc+prod.price*prod.cantidad,0)}</strong></h3>
+                <button className="btn-carrito" onClick={vaciarCarrito}>Vaciar carrito</button>
+                <button className="btn-carrito">Comprar carrito</button>
             </div>
             </Container>
             )
