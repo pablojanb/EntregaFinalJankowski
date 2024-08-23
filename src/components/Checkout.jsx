@@ -2,10 +2,11 @@ import { useState } from "react"
 import { Container } from "react-bootstrap"
 import { useContext } from "react"
 import { CarritoContext } from "../contexts/CarritoContext"
+import { collection, addDoc, getFirestore } from "firebase/firestore"
 
 export const Checkout = ()=> {
 
-    const {carrito} = useContext(CarritoContext)
+    const {carrito, vaciarCarrito} = useContext(CarritoContext)
 
     const [cliente, setCliente] = useState({
         nombre: "",
@@ -29,9 +30,16 @@ export const Checkout = ()=> {
         )
     }
 
+
     const handleCompra = (e)=>{
         e.preventDefault()
-        console.log(pedido)
+        const db = getFirestore()
+        const pedidosRef = collection(db, "pedidos")
+        addDoc(pedidosRef, pedido)
+            .then(pedido=>{
+                console.log(pedido.id)
+            })
+        vaciarCarrito()
     }
 
     return (

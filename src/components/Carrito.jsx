@@ -5,8 +5,7 @@ import { Link } from "react-router-dom"
 
 export const Carrito = ()=> {
 
-    const {carrito} = useContext(CarritoContext)
-    const {vaciarCarrito} = useContext(CarritoContext)
+    const {carrito, vaciarCarrito} = useContext(CarritoContext)
 
     if (carrito.length < 1) {
         return (
