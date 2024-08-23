@@ -1,4 +1,5 @@
 import { Item } from "./Item"
+import { mayuscula } from "../helpers/mayuscula"
 
 export const ItemList = ({productos, loading, titulo})=> {
 
@@ -13,7 +14,7 @@ export const ItemList = ({productos, loading, titulo})=> {
 
     return (
         <>
-        <h1>{titulo}</h1>
+        <h1>{mayuscula(titulo)}</h1>
         <div className="productos">
             {productos.map((elem)=>{
             return (

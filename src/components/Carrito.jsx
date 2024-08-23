@@ -42,7 +42,7 @@ export const Carrito = ()=> {
             <div className="menu-carrito">
                 <h3><strong>Precio total: ${carrito.reduce((acc,prod)=>acc+prod.price*prod.cantidad,0)}</strong></h3>
                 <button className="btn-carrito" onClick={vaciarCarrito}>Vaciar carrito</button>
-                <button className="btn-carrito">Comprar carrito</button>
+                <Link to="/checkout" className="btn-carrito">Comprar carrito</Link>
             </div>
             </Container>
             )
