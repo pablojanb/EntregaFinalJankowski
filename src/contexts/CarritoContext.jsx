@@ -18,6 +18,10 @@ export const CarritoProvider = ({children})=>{
         setearCantEnUno()
     }
 
+    const eliminarProducto = (prod)=>{
+        setCarrito(carrito.filter((el)=>el.id !== prod.id))
+    }
+
     const cantidadEnCarrito = ()=>{
         return carrito.reduce((acc,carrito)=>acc + carrito.cantidad,0)
     }
@@ -27,7 +31,7 @@ export const CarritoProvider = ({children})=>{
     }
     
     return (
-        <CarritoContext.Provider value={{agregarAlCarrito, cantidadEnCarrito, carrito, vaciarCarrito}}>
+        <CarritoContext.Provider value={{agregarAlCarrito, cantidadEnCarrito, carrito, vaciarCarrito, eliminarProducto}}>
             {children}
         </CarritoContext.Provider>
             )
