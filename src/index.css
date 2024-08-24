@@ -171,3 +171,7 @@
     align-items: center;
     height: 80vh;
 }
+
+.verificar-mail{
+    color: rgb(255, 0, 0);
+}

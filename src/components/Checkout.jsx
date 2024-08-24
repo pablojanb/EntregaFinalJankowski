@@ -7,6 +7,7 @@ import { collection, addDoc, getFirestore } from "firebase/firestore";
 export const Checkout = () => {
   const { carrito, vaciarCarrito } = useContext(CarritoContext);
   const [orden, setOrden] = useState("");
+  const [validarEmail, setValidarEmail] = useState(false)
 
   const [cliente, setCliente] = useState({
     nombre: "",
@@ -31,13 +32,14 @@ export const Checkout = () => {
   const handleCompra = (e) => {
     e.preventDefault();
     if (cliente.email === cliente.confirmemail) {
-        confirmEmail = true
       const db = getFirestore();
       const pedidosRef = collection(db, "pedidos");
       addDoc(pedidosRef, pedido).then((pedido) => {
         setOrden(pedido.id);
       });
       vaciarCarrito();
+    } else {
+      setValidarEmail(true)
     }
   };
 
@@ -59,7 +61,6 @@ export const Checkout = () => {
   return (
     <Container>
       <h1>Formulario de contacto</h1>
-      <p>El mail debe coincidir</p>
       <form className="contact-form" onSubmit={handleCompra}>
         <input
           required
@@ -89,6 +90,7 @@ export const Checkout = () => {
           name="confirmemail"
           onChange={handleChange}
         />
+        {validarEmail && <p className="verificar-mail">Verifica que el email sea correcto</p>}
         <button type="submit" className="btn-carrito">
           Confirmar compra
         </button>

@@ -14,6 +14,10 @@ export const ItemDetail = ({item, loading}) => {
         cantidad < item.stock && setCantidad((prev)=>prev + 1)
     }
 
+    const setearCantEnUno = ()=> {
+        setCantidad(1)
+    }
+
     if (loading) {
         return (
             <div className="cargando">
@@ -30,7 +34,7 @@ export const ItemDetail = ({item, loading}) => {
                 <img className="img-item-detail" src={item.img} alt={item.title} />
                 <div className="counter">
                     <p>{item.description}</p>
-                    <Counter cantidad={cantidad} handleRestar={handleRestar} handleSumar={handleSumar} agregarAlCarrito={()=>agregarAlCarrito(item, cantidad)} stock={item.stock}/>
+                    <Counter cantidad={cantidad} handleRestar={handleRestar} handleSumar={handleSumar} agregarAlCarrito={()=>agregarAlCarrito(item, cantidad, setearCantEnUno)} stock={item.stock} />
                 </div>
             </div>
             <p><strong>${item.price}</strong></p>

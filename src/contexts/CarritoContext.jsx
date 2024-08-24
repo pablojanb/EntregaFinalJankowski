@@ -6,7 +6,7 @@ export const CarritoProvider = ({children})=>{
 
     const [carrito, setCarrito] = useState([])
 
-    const agregarAlCarrito = (item, cantidad)=> {
+    const agregarAlCarrito = (item, cantidad, setearCantEnUno)=> {
         const nuevoCarrito = [...carrito]
         const prodEnCarrito = nuevoCarrito.find((el)=>el.id===item.id)
         if (prodEnCarrito){
@@ -15,6 +15,7 @@ export const CarritoProvider = ({children})=>{
         } else {
             setCarrito([...carrito, {...item, cantidad}])
         }
+        setearCantEnUno()
     }
 
     const cantidadEnCarrito = ()=>{
