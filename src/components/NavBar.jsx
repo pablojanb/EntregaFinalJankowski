@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 
 export const NavBar = ()=> {
     return (
-            <Navbar expand="lg" className="bg-body-tertiary">
+            <Navbar expand="lg" className="bg-body-tertiary nav-bar">
                 <Container>
                     <Navbar.Brand as={NavLink} to="/">Zenith</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />

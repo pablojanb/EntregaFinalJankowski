@@ -7,7 +7,7 @@ import { collection, addDoc, getFirestore } from "firebase/firestore";
 export const Checkout = () => {
   const { carrito, vaciarCarrito } = useContext(CarritoContext);
   const [orden, setOrden] = useState("");
-  const [validarEmail, setValidarEmail] = useState(false)
+  const [validarEmail, setValidarEmail] = useState(false);
 
   const [cliente, setCliente] = useState({
     nombre: "",
@@ -39,7 +39,7 @@ export const Checkout = () => {
       });
       vaciarCarrito();
     } else {
-      setValidarEmail(true)
+      setValidarEmail(true);
     }
   };
 
@@ -60,41 +60,45 @@ export const Checkout = () => {
 
   return (
     <Container>
-      <h1>Formulario de contacto</h1>
-      <form className="contact-form" onSubmit={handleCompra}>
-        <input
-          required
-          type="text"
-          placeholder="Ingrese su nombre"
-          name="nombre"
-          onChange={handleChange}
-        />
-        <input
-          required
-          type="text"
-          placeholder="Ingrese su apellido"
-          name="apellido"
-          onChange={handleChange}
-        />
-        <input
-          required
-          type="email"
-          placeholder="Ingrese su email"
-          name="email"
-          onChange={handleChange}
-        />
-        <input
-          required
-          type="email"
-          placeholder="Confirme su email"
-          name="confirmemail"
-          onChange={handleChange}
-        />
-        {validarEmail && <p className="verificar-mail">Verifica que el email sea correcto</p>}
-        <button type="submit" className="btn-carrito">
-          Confirmar compra
-        </button>
-      </form>
+      <div className="form-page">
+        <h1>Formulario de contacto</h1>
+        <form className="contact-form" onSubmit={handleCompra}>
+          <input
+            required
+            type="text"
+            placeholder="Ingrese su nombre"
+            name="nombre"
+            onChange={handleChange}
+          />
+          <input
+            required
+            type="text"
+            placeholder="Ingrese su apellido"
+            name="apellido"
+            onChange={handleChange}
+          />
+          <input
+            required
+            type="email"
+            placeholder="Ingrese su email"
+            name="email"
+            onChange={handleChange}
+          />
+          <input
+            required
+            type="email"
+            placeholder="Confirme su email"
+            name="confirmemail"
+            onChange={handleChange}
+          />
+          {validarEmail && (
+            <p className="verificar-mail">Verifica que el email sea correcto</p>
+          )}
+          <button type="submit" className="btn-carrito">
+            Confirmar compra
+          </button>
+        </form>
+      </div>
     </Container>
   );
 };
