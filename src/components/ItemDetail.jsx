@@ -31,13 +31,15 @@ export const ItemDetail = ({item, loading}) => {
         <div className="itemDetail">
             <h1>{item.title}</h1>
             <div className="description">
+                <div>
                 <img className="img-item-detail" src={item.img} alt={item.title} />
+                <p><strong>${item.price}</strong></p>
+                </div>
                 <div className="counter">
                     <p>{item.description}</p>
                     <Counter cantidad={cantidad} handleRestar={handleRestar} handleSumar={handleSumar} agregarAlCarrito={()=>agregarAlCarrito(item, cantidad, setearCantEnUno)} stock={item.stock} />
                 </div>
             </div>
-            <p><strong>${item.price}</strong></p>
         </div>
     )
 }
