@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    border: 1px solid red;
 }
 
 .nav-bar {
@@ -195,12 +196,36 @@
 
 }
 
+.finalizar-compra {
+    text-align: center;
+}
+
+.menu-carrito{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media only screen and (min-width: 320px) {
+    .producto-carrito {
+        flex-direction: column;
+        gap: 5px;
+        margin: 40px;
+    }
+}
+
 
 @media only screen and (min-width: 367px) {
     .productos {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+    }
+
+    .producto-carrito {
+        flex-direction: row;
+        gap: 30px;
     }
 }
 

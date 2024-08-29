@@ -47,7 +47,7 @@ export const Carrito = () => {
           );
         })}
       </div>
-      <h1>Finalizar compra</h1>
+      <h1 className="finalizar-compra">Finalizar compra</h1>
       <div className="menu-carrito">
         <h3>
           <strong>
