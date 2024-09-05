@@ -140,13 +140,14 @@
     margin-bottom: 100px;
 }
 
-.mensaje-carrito-vacio {
+.mensaje-carrito-vacio, .error404 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 80vh;
     text-align: center;
+    margin: 20px;
 }
 
 .description {

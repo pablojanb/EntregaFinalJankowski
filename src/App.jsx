@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CarritoProvider } from "./contexts/CarritoContext";
 import { Carrito } from "./components/Carrito";
 import { Checkout } from "./components/Checkout";
+import { Error404 } from "./components/Error404";
 
 
 
@@ -24,6 +25,7 @@ function App() {
             <Route path="/item/:id" element={<ItemDetailContainer />}/>
             <Route path="/carrito" element={<Carrito />}/>
             <Route path="/checkout" element={<Checkout />}/>
+            <Route path="*" element={<Error404 />}/>
           </Routes>
           <Footer />
         </BrowserRouter>
