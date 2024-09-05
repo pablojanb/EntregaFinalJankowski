@@ -4,7 +4,7 @@ export const CarritoContext = createContext()
 
 export const CarritoProvider = ({children})=>{
 
-    const carritoInicial = JSON.parse(localStorage.getItem("carrito"))
+    const carritoInicial = JSON.parse(localStorage.getItem("carrito")) || []
 
     const [carrito, setCarrito] = useState(carritoInicial)
 
