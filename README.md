@@ -29,16 +29,16 @@ Para ejecutar esta aplicación en tu entorno local, sigue los siguientes pasos:
 
 1. **Clona el repositorio:**
 
-git clone https://github.com/pablojanb/EntregaFinalJankowski.git
+`git clone https://github.com/pablojanb/zenith-ecommerce.git`
 
 2. **Navega a la carpeta del proyecto:**
 
-cd EntregaFinalJankowski
+`cd EntregaFinalJankowski`
 
 3. **Instala las dependencias:**
 
-npm install
+`npm install`
 
 4. **Inicia el servidor de desarrollo:**
 
-npm run dev
+`npm run dev`

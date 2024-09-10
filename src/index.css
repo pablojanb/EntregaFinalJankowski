@@ -65,8 +65,12 @@
 }
 
 .btn-cantidad {
-    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 10px;
+    height: 40px;
+    width: 40px;
 }
 
 .btn-agregar {
@@ -97,6 +101,7 @@
     font-size: 20px;
     background-color: rgb(223, 221, 221);
     margin-top: 60px;
+    padding: 30px;
 }
 
 .producto-carrito img {
