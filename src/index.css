@@ -35,7 +35,7 @@
     border-radius: 20%;
 }
 
-.ver-mas:hover{
+.ver-mas:active{
     background-color: black;
     color: white;
 }
@@ -88,7 +88,7 @@
     border-radius: 20%;
 }
 
-.btn-cantidad:hover, .btn-agregar:hover {
+.btn-cantidad:active, .btn-agregar:active {
     background-color: black;
     color: white;
 }
@@ -126,7 +126,7 @@
     text-align: center;
 }
 
-.btn-carrito:hover {
+.btn-carrito:active {
     background-color: black;
     color: white;
 }
@@ -248,5 +248,20 @@ form {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
+    }
+
+    .btn-cantidad:hover, .btn-agregar:hover {
+        background-color: black;
+        color: white;
+    }
+    
+    .ver-mas:hover{
+        background-color: black;
+        color: white;
+    }
+    
+    .btn-carrito:hover {
+        background-color: black;
+        color: white;
     }
 }

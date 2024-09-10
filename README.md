@@ -33,7 +33,7 @@ Para ejecutar esta aplicación en tu entorno local, sigue los siguientes pasos:
 
 2. **Navega a la carpeta del proyecto:**
 
-`cd EntregaFinalJankowski`
+`cd zenith-ecommerce`
 
 3. **Instala las dependencias:**
 
